@@ -4,37 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
+    <title>Venta de Arroz</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
 </head>
 <body>
-  <div id="app">
-    <div class="container">
-      <h1>Operaciones Basicas</h1>
-      <p>By Alvaro</p>
-      <br>
-        
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Numero 1</span>
-          <input v-model.number="number_1" type="number" class="form-control" placeholder="Ingrese Numero">
-        </div>
 
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Numero 2</span>
-          <input v-model.number="number_2" type="number" class="form-control" placeholder="Ingrese el Numero 2">
-        </div>
+<div id="app">
 
-        <a @click="sum" class="btn btn-primary" href="#" role="button">Sumar</a>
-        <button @click="subtract" class="btn btn-secondary" type="button">Restar</button>
-        <input @click="multiply" class="btn btn-success" type="button" value="Multiplicar">
-        <input @click="divide" class="btn btn-danger" type="button" value="Dividir">
-
-        <br>
-        <br>
-        <h4 v-text="response"></h4>
+  <div id="main" class="container_main">
+    <h1>Banco de la Region</h1>
+    <hr>
+    <div>
+      <p>En nuestro banco tendrá la oportunidad de obtener diferentes lineas de credito según su necesidad. Por favor lea abajo para más información.</p>
+      <h6>Credito de libre inversión: Interés <strong>2.5%</strong> mensual</h6>
+      <h6>Credito de libranza: Interés del <strong>2.9%</strong> mensual</h6>
+      <span>Información adicional: Planes de pago a cuotas menores de 6 meses tienen un <strong>0.2%</strong> de descuento. Creditos con cuotas entre 12 y 24 meses tienen un <strong>0.4%</strong> de descuento y creditos mayores a 24 meses tienen un <strong>0.7%</strong> de descuento.</span>
     </div>
-  </div>  
+    <hr>
+    <br>
+    <div>
+      <h5>Querido usuario, para obtener mayor información sobre su credito consulte el formulario de abajo.</h5>
+      <p class="text-muted">*Aplican términos y condiciones.</p>
+    </div>
+
+    <br>
+    <div class="container_1_2 overflow-hidden">
+      <div class="row gy-6 leftRow">
+      <div class="container2">
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <span  class="input-group-text input-group-addon-padding-x: 9px">Nombres</span>
+            <input v-model="firstNames" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <span  class="input-group-text input-group-addon-padding-x: 9px">Apellidos</span>
+            <input v-model="lastNames" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <input v-model="email" type="text" class="form-control" placeholder="email" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">@tucorreo.com</span>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <span  class="input-group-text input-group-addon-padding-x: 9px">Monto Credito</span>
+            <input v-model.number="loanAmount" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          </div>
+        </div>
+        <div class="col-4">
+          <select  v-model.number="loanType" class="form-select" aria-label="Default select example">
+            <option valuer="0" selected>Seleccione linea de Credito</option>
+            <option value="1">Libre inversión</option>
+            <option value="2">Libranza</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <div class="input-group mb-3" style="margin-top: 1rem;">
+            <span class="input-group-text input-group-addon-padding-x: 9px">Periodo de Prestamo</span>
+            <input v-model.number="loanPeriod" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          </div>
+          <p class="text-muted">*Por favor indicar periodo en meses.</p>
+        </div>
+    <p class="text-muted">Para mayor información y detalles sobre su préstamo por favor acercarse a la oficina más cercana de Banco de Región o comunicarse al 555-5555</p>
+        
+      </div>
+    </div>
+
+    <div class="row gy-6 righRow">
+      <div class="container2b">
+        <h4 v-text="greeting"></h4>
+        <br><br>
+        <h4 v-text="loanSummary"></h4>
+        <br>
+        <br><br><br><br><br>
+      </div>
+      <br>
+
+    </div>
+
+  </div>
+  <hr>
+  <br>
+  <div class="d-grid gap-2">
+    <button @click="loanQuote" class="btn btn-dark" style="height: 50px" type="button">Consultar Préstamo</button>
+  </div>
+
+</div>
+
+</div>
+ 
 </body>
+
 <script src="js/vue.js"></script>
 <script src="js/app.js"></script>
+<link rel="stylesheet" href="css/styles.css">
 </html>

@@ -1,0 +1,30 @@
+.container_1_2 {
+    
+    display: grid;
+    grid-template: repeat(1, 100%) / repeat(2, 50%);
+    justify-items: stretch;
+    
+
+    
+}
+
+.container2bb {
+    justify-items: stretch;
+    margin-left: 20px;
+
+
+}
+
+.col-4 {
+    width: 85%
+}
+
+#main {
+   padding-left: 120px;
+   padding-right: 120px;
+ 
+}
+
+body {
+    margin: 5px;
+}
